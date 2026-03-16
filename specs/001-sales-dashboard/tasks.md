@@ -82,9 +82,9 @@ lowest, tooltips work, and layout responds to viewport width.
 
 ### Implementation for User Story 3
 
-- [ ] T009 [US3] Render a Plotly bar chart of sales by product category in `app.py`: group DataFrame by `category`, sum `total_amount`, sort descending, add hover tooltips
-- [ ] T010 [US3] Render a Plotly bar chart of sales by geographic region in `app.py`: group DataFrame by `region`, sum `total_amount`, sort descending, add hover tooltips
-- [ ] T011 [US3] Wrap category and region charts in `st.columns(2)` in `app.py` so they appear side by side on wide viewports; Streamlit's responsive behaviour handles narrow screens automatically
+- [x] T009 [US3] Render a Plotly bar chart of sales by product category in `app.py`: group DataFrame by `category`, sum `total_amount`, sort descending, add hover tooltips
+- [x] T010 [US3] Render a Plotly bar chart of sales by geographic region in `app.py`: group DataFrame by `region`, sum `total_amount`, sort descending, add hover tooltips
+- [x] T011 [US3] Wrap category and region charts in `st.columns(2)` in `app.py` so they appear side by side on wide viewports; Streamlit's responsive behaviour handles narrow screens automatically
 
 **Checkpoint**: All three user stories independently functional.
 

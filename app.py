@@ -45,3 +45,38 @@ fig = px.line(
 )
 fig.update_traces(mode="lines+markers")
 st.plotly_chart(fig, use_container_width=True)
+
+# T009 + T010: Aggregate sales by category and region
+category_sales = (
+    df.groupby("category")["total_amount"]
+    .sum()
+    .reset_index()
+    .sort_values("total_amount", ascending=False)
+)
+region_sales = (
+    df.groupby("region")["total_amount"]
+    .sum()
+    .reset_index()
+    .sort_values("total_amount", ascending=False)
+)
+
+# T011: Side-by-side bar charts in two columns
+col_cat, col_reg = st.columns(2)
+with col_cat:
+    fig_cat = px.bar(
+        category_sales,
+        x="category",
+        y="total_amount",
+        labels={"category": "Category", "total_amount": "Sales ($)"},
+        title="Sales by Category",
+    )
+    st.plotly_chart(fig_cat, use_container_width=True)
+with col_reg:
+    fig_reg = px.bar(
+        region_sales,
+        x="region",
+        y="total_amount",
+        labels={"region": "Region", "total_amount": "Sales ($)"},
+        title="Sales by Region",
+    )
+    st.plotly_chart(fig_reg, use_container_width=True)
