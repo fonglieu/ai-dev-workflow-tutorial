@@ -65,8 +65,8 @@ sum to the Total Sales KPI, and tooltips show exact amounts on hover.
 
 ### Implementation for User Story 2
 
-- [ ] T007 [US2] Aggregate the DataFrame by month in `app.py`: group by year-month, sum `total_amount`, sort chronologically
-- [ ] T008 [US2] Render a Plotly line chart of monthly sales in `app.py` with labelled axes and interactive hover tooltips showing month and exact sales amount
+- [x] T007 [US2] Aggregate the DataFrame by month in `app.py`: group by year-month, sum `total_amount`, sort chronologically
+- [x] T008 [US2] Render a Plotly line chart of monthly sales in `app.py` with labelled axes and interactive hover tooltips showing month and exact sales amount
 
 **Checkpoint**: User Stories 1 and 2 both independently functional.
 
