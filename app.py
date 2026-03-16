@@ -11,8 +11,30 @@ st.set_page_config(
 # T003: Branded page header
 st.title("ShopSmart Sales Dashboard")
 
+# T013: Missing-file guard
+DATA_PATH = "data/sales-data.csv"
+if not __import__("os").path.exists(DATA_PATH):
+    st.error(
+        "Data file not found: `data/sales-data.csv`. "
+        "Please ensure the file exists in the repository root before running the dashboard."
+    )
+    st.stop()
+
 # T004: Load sales data
-df = pd.read_csv("data/sales-data.csv", parse_dates=["date"])
+df = pd.read_csv(DATA_PATH, parse_dates=["date"])
+
+# T012: CSV validation
+REQUIRED_COLUMNS = {"date", "order_id", "product", "category", "region", "quantity", "unit_price", "total_amount"}
+warnings = []
+missing_cols = REQUIRED_COLUMNS - set(df.columns)
+for col in sorted(missing_cols):
+    warnings.append(f"Missing required column: `{col}`")
+
+# T014: Sidebar warnings expander
+if warnings:
+    with st.sidebar.expander("⚠️ Data Warnings"):
+        for w in warnings:
+            st.write(w)
 
 # T005: Compute KPIs
 total_sales = df["total_amount"].sum()

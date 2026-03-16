@@ -100,9 +100,9 @@ the sidebar warning appears while KPI cards and charts that can still compute do
 
 ### Implementation for User Story 4
 
-- [ ] T012 [US4] Add a CSV validation function in `app.py` that checks for the 8 required columns (`date`, `order_id`, `product`, `category`, `region`, `quantity`, `unit_price`, `total_amount`) and collects a list of warning messages
-- [ ] T013 [US4] Add a missing-file guard in `app.py`: if `data/sales-data.csv` does not exist, display a descriptive `st.error` message and `st.stop()` to halt rendering
-- [ ] T014 [US4] Render a collapsible `st.sidebar.expander("⚠️ Data Warnings")` in `app.py` that lists all collected validation warnings; only show the expander when warnings exist
+- [x] T012 [US4] Add a CSV validation function in `app.py` that checks for the 8 required columns (`date`, `order_id`, `product`, `category`, `region`, `quantity`, `unit_price`, `total_amount`) and collects a list of warning messages
+- [x] T013 [US4] Add a missing-file guard in `app.py`: if `data/sales-data.csv` does not exist, display a descriptive `st.error` message and `st.stop()` to halt rendering
+- [x] T014 [US4] Render a collapsible `st.sidebar.expander("⚠️ Data Warnings")` in `app.py` that lists all collected validation warnings; only show the expander when warnings exist
 
 **Checkpoint**: All four user stories independently functional; dashboard degrades gracefully.
 
