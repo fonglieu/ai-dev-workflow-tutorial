@@ -11,6 +11,13 @@ st.set_page_config(
 # T003: Branded page header
 st.title("ShopSmart Sales Dashboard")
 
+# T015: ShopSmart accent color applied globally to all charts
+ACCENT = "#0D6EFD"
+st.markdown(
+    f"<style>[data-testid='stMetric'] {{ border-left: 4px solid {ACCENT}; padding-left: 0.75rem; }}</style>",
+    unsafe_allow_html=True,
+)
+
 # T013: Missing-file guard
 DATA_PATH = "data/sales-data.csv"
 if not __import__("os").path.exists(DATA_PATH):
@@ -64,6 +71,7 @@ fig = px.line(
     labels={"date": "Month", "total_amount": "Sales ($)"},
     title="Monthly Sales Trend",
     hover_data={"date": "|%B %Y", "total_amount": ":,.0f"},
+    color_discrete_sequence=[ACCENT],
 )
 fig.update_traces(mode="lines+markers")
 st.plotly_chart(fig, use_container_width=True)
@@ -91,6 +99,7 @@ with col_cat:
         y="total_amount",
         labels={"category": "Category", "total_amount": "Sales ($)"},
         title="Sales by Category",
+        color_discrete_sequence=[ACCENT],
     )
     st.plotly_chart(fig_cat, use_container_width=True)
 with col_reg:
@@ -100,5 +109,6 @@ with col_reg:
         y="total_amount",
         labels={"region": "Region", "total_amount": "Sales ($)"},
         title="Sales by Region",
+        color_discrete_sequence=[ACCENT],
     )
     st.plotly_chart(fig_reg, use_container_width=True)

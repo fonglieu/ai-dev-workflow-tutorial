@@ -112,8 +112,8 @@ the sidebar warning appears while KPI cards and charts that can still compute do
 
 **Purpose**: Branding, final dependency check, and deployment.
 
-- [ ] T015 Apply ShopSmart accent color to all Plotly charts and KPI card styling in `app.py` (use a consistent blue/teal hex value via Plotly `color_discrete_sequence` and `st.markdown` CSS)
-- [ ] T016 Review and finalize `requirements.txt`: confirm all imported packages are listed and versions are compatible with Streamlit Community Cloud
+- [x] T015 Apply ShopSmart accent color to all Plotly charts and KPI card styling in `app.py` (use a consistent blue/teal hex value via Plotly `color_discrete_sequence` and `st.markdown` CSS)
+- [x] T016 Review and finalize `requirements.txt`: confirm all imported packages are listed and versions are compatible with Streamlit Community Cloud
 - [ ] T017 Deploy to Streamlit Community Cloud via the web UI: connect the GitHub repo, set main file to `app.py`, verify the live public URL renders all four sections correctly
 
 ---
